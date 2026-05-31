@@ -1,0 +1,16 @@
+// SNG: Spells & Guns custom overrides for the CitizenSNG fork.
+// Keep ALL local style customisations in this file (and others under sng/)
+// so the rest of the skin stays byte-identical to upstream Citizen and
+// `git merge upstream` resolves cleanly. Loaded last from skin.less, so
+// these rules win over upstream without needing !important.
+//
+// Prefer overriding via the CSS custom properties defined in
+// tokens-citizen.less (e.g. --color-surface-0, --background-color-*) — those
+// cascade through the whole skin from one place.
+
+// Example — background image (uncomment and set your asset path):
+// .citizen-body-container {
+// 	background-image: url( assets/sng-background.jpg );
+// 	background-size: cover;
+// 	background-attachment: fixed;
+// }
