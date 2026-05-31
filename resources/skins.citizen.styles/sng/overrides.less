@@ -9,8 +9,9 @@
 // cascade through the whole skin from one place.
 
 // SNG: Spells & Guns brand logo in the header.
-// Markup lives in templates/Sng__HeaderLogo.mustache (first child of
-// .citizen-header, so it's leftmost on mobile / topmost on a vertical header).
+// Markup lives in templates/Sng__HeaderLogo.mustache (last child of
+// .citizen-header, so it sits at the bottom of a vertical header / at the end
+// of a horizontal one). margin-block-start:auto pins it to the bottom edge.
 //
 // Asset: drop the logo file into THIS folder (resources/skins.citizen.styles/sng/),
 // then reference it in the url() below. NOTE the path is relative to the styles
@@ -22,6 +23,8 @@
 	display: flex;
 	flex-shrink: 0;
 	align-self: center;
+	// Push to the bottom of the (vertical) flex header; no-op in a row header.
+	margin-block-start: auto;
 	// Logo is square (1:1); keep width == height.
 	width: var( --sng-logo-width, 32px );
 	height: var( --sng-logo-height, 32px );
