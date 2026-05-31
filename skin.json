@@ -748,7 +748,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteSkinPath": "Citizen"
+		"remoteSkinPath": "CitizenSNG"
 	},
 	"ResourceModuleSkinStyles": {
 		"citizen": {

@@ -8,9 +8,36 @@
 // tokens-citizen.less (e.g. --color-surface-0, --background-color-*) — those
 // cascade through the whole skin from one place.
 
-// Example — background image (uncomment and set your asset path):
+// SNG: Spells & Guns brand logo in the header.
+// Markup lives in templates/Sng__HeaderLogo.mustache (first child of
+// .citizen-header, so it's leftmost on mobile / topmost on a vertical header).
+//
+// Asset: drop the logo file into THIS folder (resources/skins.citizen.styles/sng/),
+// then reference it in the url() below. NOTE the path is relative to the styles
+// ROOT, not this file — see the comment on the background-image line.
+//
+// Tweak --sng-logo-width / --sng-logo-height to size it once you see it in
+// place; background-size: contain keeps the aspect ratio undistorted.
+.citizen-header__sng-logo {
+	display: flex;
+	flex-shrink: 0;
+	align-self: center;
+	// Logo is square (1:1); keep width == height.
+	width: var( --sng-logo-width, 32px );
+	height: var( --sng-logo-height, 32px );
+	// Path is relative to the styles ROOT (resources/skins.citizen.styles/,
+	// where skin.less lives) because @import inlines this file there — NOT
+	// relative to this file's own folder. Hence the leading `sng/`.
+	background-image: url( sng/sng-logo.png );
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+
+// Example — full-page background image (uncomment and set your asset path).
+// Remember: url() resolves from the styles root, so prefix with `sng/`.
 // .citizen-body-container {
-// 	background-image: url( assets/sng-background.jpg );
+// 	background-image: url( sng/background.jpg );
 // 	background-size: cover;
 // 	background-attachment: fixed;
 // }
